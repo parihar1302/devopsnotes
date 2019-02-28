@@ -1,0 +1,7 @@
+LAMP server on ubuntu 16.0 LTS xenial 
+
+* NOW START WORKING ON ALREADY UBUNTU MACHINE 
+
+* sudo apt-get update
+
+* sudo apt-get upgrade

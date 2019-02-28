@@ -1,0 +1,13 @@
+CREATE IMAGE ON DOCKER
+
+* INSATLLING TOMCAT ON CENTOS
+ (https://www.vultr.com/docs/how-to-install-apache-tomcat-8-on-centos-7)
+
+#  Step 1: Update your CentOS system
+   sudo yum install epel-release (no need of sudo in container cuzz by deaulf its on root)
+
+#  Step 2: Install Java
+   sudo yum updte -y
+   sudo yum install java-1.8.0-openjdk.x86_64
+
+

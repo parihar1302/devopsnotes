@@ -1,0 +1,73 @@
+NAGIOS CONFIGURATION ON UBUNTU 16.04
+
+****NAGIOS REMOTLING MONITORING SERVER/COMPUTER
+
+1.) 2 OS ENABLE MACHINE
+2.) ROOT ACCESS
+3.) LAMP SERVER
+
+#### login to your server
+* ssh abhi@yourserveripaddress -p 22        to chek ssh is = service ssh status, to active/enable= service ssh start
+ =
+##### installation the package
+* apt-get install apache2
+  apt-get install php7.0-gd
+  apt-get install libapache2-mod-php7.0
+  apt-get install build-essential
+  apt-get install libgd2-xpm-dev
+           
+           or
+i.)  apt install apache2 libapache2-mod-php7.0 php7
+ii.) apt install wget unzip zip autoconf gcc libc6 
+
+           or
+i.) apt-get install wget build-essential apache2 php apache2-mod-php7.0 php-gd libgd-dev sendmail unzip
+
+
+#### INSTALLING NAGIOS 4
+* useradd nagios    {adding user}     
+
+* groupadd nagcmd   {adding group}
+
+* usermod -a -G nagcmd nagios   {adding user to the gruop}
+
+* apt-get update   {to update the package list}
+
+* apt-get install build-essentiallibgd2-xpm-devopenssl libssl-dev unzip    {install required package}
+
+* mkdir downloads     {to create folder}
+
+* cd downloads         {go to the folder}
+
+* curl -L -O http://assets.nagios.com//downloads/nagioscore/releases/nagios-4.3.4.tar.gz    {skip download latest nagios from browser & copy the link and paste it here}
+                        
+<<<<<<<<<<<<<<<ERROR 404>>>>>>>>>>>>>>>>>>>>>>>>>>>
+                                            or
+ wget http://assets.nagios.com//downloads/nagioscore/releases/nagios-4.2.0.tar.gz
+
+
+* tar -xzf nagios-4.2.0.tar.gz     {to extract the file}
+
+* cd nagios-4.2.0 
+
+* ./configure --with-nagios-group=nagios --with-command-group=nagcmd --with-mail=/usr/sbin/sendmail       {running confige script to specify user and group}
+
+* make all    {to complie nagios/build nagios file}
+
+* sudo make install    {NAGIOS binary file,CGI file, HTML file}
+
+<<<<<<<<<<<<<error >>>>>>>
+
+* make install-init     {install nagios deamon init}
+
+* make install-commandmode    {install external commandmode configuration}
+
+<<<<<<<<<<<<<<error>>>>>>>>>
+
+* systemctl enable nagios.service     {enable nagios deamon}
+
+* make install-config       {nagios configuration file}
+
+* make install-webconf       {install nagios configuration file for apache web server, which is found in /etc/apache2/sites-enabled/}
+
+*s

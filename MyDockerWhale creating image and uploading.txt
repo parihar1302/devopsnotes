@@ -1,0 +1,32 @@
+docker creating my-docker-whale image and publish on docker hub
+
+mkdir mywhale   (to create folder where dockerfile will come)
+
+cd mkdir         (go to that folder)
+
+touch Dockerfile          (create a file)
+
+vi Dockerfile            (open editor)
+      FROM docker/whalesay:latest
+      RUN apt-get -y update && apt-get install -y fortunes
+      CMD /usr/games/fortune -a | cowsay
+
+cat Dockerfile      (to verify)
+
+docker build -t my-docker-whale .    (to convert dockerfile into dockerimage)
+
+docker images            (to chek all image)
+
+docker run my-docker-whale     (to run image)
+
+docker tag imageid accountname/my-docker-whale:latest     (to prepare dockerimage to the outside world/dockerhub)
+
+docker login    (login your dockerhub)
+
+docker push abhisingh1302/-docker-whale     (to upload on dockerhub)
+{note:- to use your image we need to delete previous image from our machine locally or delete from local repository thn on;y donwload from dockerhub}
+docker rmi imageid -f     (to delete image)
+
+docker pull abhisingh1302/my-docker-whale     (to download image from dockerhub)
+     or
+docker run abhisingh102/my-docker-whale       (to download and run image from dockerhub)

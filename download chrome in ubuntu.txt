@@ -1,0 +1,22 @@
+download chrome in ubuntu
+
+
+
+sudo nano /etc/apt/sources.list
+
+deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main
+
+wget https://dl.google.com/linux/linux_signing_key.pub
+
+sudo apt-key add linux_signing_key.pub
+
+sudo apt update
+
+sudo apt install google-chrome-stable
+
+/opt/google/chrome/PepperFlash
+
+Target Packages (main/binary-amd64/Packages) is configured multiple times
+
+sudo rm /etc/apt/sources.list.d/google-chrome.list
+

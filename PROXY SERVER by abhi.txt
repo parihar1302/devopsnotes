@@ -1,0 +1,29 @@
+PROXY SEREVR
+            A computer where we install proxy that's called proxy server.
+            It acts like a intermidiator, so wenevr any client sends any request first
+            it goes to the proxy server and proxy server forward that request to web/file server &
+            later web/file server respons back to proxy serevr and that response goes to the clients
+            shud have 2 NIC 1 for client(switch) nd 1 for internet(router).
+
+
+
+   Client-proxy server-web/file servere 
+
+Use of proxy server:-
+
+1.)Cache- after accessing any web/file server,proxy server save the content of the requst in its Cache Memory ,
+          so for next the any clieent wants to access same web/file server that time Proxy server use content of cache memory
+          & give the rply to client. instead off going to web/file server.time hacker will gett
+          Speed up to accesss
+          save bandwidth
+
+2>) Security- if any hacker wants to access or hack our network that time he can not because
+              hacker will get only proxy server location but not what client requst for & not what acctual PC location.
+
+3.) Auditing- WE can get to know which user is using which site for how long.
+
+4.) aCCESS cONTROl List- Can control what site only will user use.
+                         Can block the site and time restiction.
+
+5.) Access Enhansment- security bypass.like if u block any site bt u can access for perticular user.
+                       if u have blocked fb that time user will send requst toproxy server & proxy server allow that fb servies.

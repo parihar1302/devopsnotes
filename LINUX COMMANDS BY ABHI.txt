@@ -1,0 +1,257 @@
+LINUX COMMANDS BY ABHI
+
+* pwd = gives address of ur current directory from root.
+
+* /  = gives root address
+
+* sudo -i = to go to root
+
+* exit = to go back to home directoryls
+
+
+* cd = to go in folder {ex:- cd Downloads}
+
+** ls/dir = to show file & directory
+
+* ls -d = to show only directory.
+
+* ls -l = to show file , directory &  property.
+
+* ls -a = to show all hidden files
+
+
+* mkdir = to creat folder or directory {ex:-(a) for abhishek = mkdir abhishek}
+                                       {ex:-(b) for abhishek singh = mkdir abhishek\singh}
+                   mkdir ubuntuvm
+
+
+* rmdir = to delete empty folder or directory only  {ex:- rmdir abhishek}
+                    rmdir ubuntuvm
+
+
+* rm = to delete folder or directory wiith containg files(not empty)  {ex:- rm abhishek}
+                    rm -r ubuntuvm
+
+* cp = copy a file 
+       # cp filename.txt /home/user/location /home/user/location/
+
+
+* mv
+
+
+* find = to find all the files which starts with given name.
+               find abhi.*
+
+
+* df = to see available disk space
+
+* df -m = to chek in megabyte
+
+* du = disk usage of file or folder in system
+        df filename or df foldername
+       du ubuntuvm
+
+
+* ls -lah = to give file & size in the folderl
+             ls -lah ubuntuvm
+
+* cd = to go on the directory(change directory)
+           cd ubuntuvm
+
+* cp = to copy the directories
+
+* touch = to creat a file
+           touch abhi.txt (widout giving .txt or .exe or etc file will be createdls)
+
+* echo = to write in a file.
+           echo i am awesome>>abhi.txt
+
+* cat = to display the content of file.
+           cat abhi.txt
+
+* head - = to show top sepecific commands
+              head -2 abhi.txt 
+
+* tail - = to show last lines of the file
+              tail -2 abhi.txt
+
+* stat = to show every detail like name, size, last access, modify, change
+              stat abhi.txt
+              stat ubuntuvm
+
+
+* EDITORS:- i.) nano (denote keyword with color)  }
+            ii.) vim (simpler than nano)          }--- can create, save & modify file
+           iii.) jed                              }
+
+           nano abhi.txt
+
+*******CREATING DELETE MODIFING  PASSWORD USER GROUPS**************
+
+* 
+
+
+
+   
+* date = to show current date.
+
+* cal= to show current calendar.
+
+* cal 02 1994 = to go perticular calendar.
+
+* uptime = server time, boot time , user & load time
+
+* uname = to show linux distro in your system.
+
+* uname -a =to show linux distros, kernal version & processor & other info.
+
+* hwclock = to delaied time in time zone
+
+* last = who logged in & when logged in
+
+* arch = to know architecure or to know how much bits 64/32.
+
+* tar = to compreed a file into tar
+
+* zip = to compressed a file into zip archoiev & unzip to extract the file.
+
+
+*#* hostname = to show computer is in host or network.
+
+*#* hostname -I = to chek system ip address
+
+
+*#* ifconfig = to show ip address, broadcast ,subnet mask  interface.
+
+*#* iwconfig = to show wireless adaptor
+
+
+*#* apt-get install package name= to install any package, need root previlage.
+              apt-get install wordpress
+
+*#* apt-get remove package name= to remove package but doesnt remove dependency.
+              apt-get remove wordpress
+
+
+*#* apt-get autoremove = to remove completely including dependency.
+               apt-get autoremove
+
+
+*#* apt-cache show package-name = show dependency info. version number & description of the package.
+
+
+*#* apt-cache pkgnames = generate a list of currently installed package
+
+*#* apt-get purge package-name = remove package as well as configuration file.
+                apt-get purge google-chrome-stable
+
+* apt-get update = to update reposetory in your system.
+
+* apt-get upgrade = to upgrade our system.
+
+* apt-get dist-upgrade = to upgrade your linux.
+
+* apt-cache search wordpress = to search a package.
+
+
+* reboot / init 6 = restart server
+
+* poweroff / init 0 = to shut down the server
+
+* whoami = to show who is the current logged user/ it shoes u r in superuser mode or user mode.
+
+* who = to show current user with time
+0
+
+* dmesg = chek boot logs, NIC link is down or up , etc
+
+
+*** chmod = to give file permission   { "+" to allow ,"-" to deny permission             }                 
+           to make file executable    { u=user, g=group, o=other, a=all
+          i.) chmod +x abhi.txt       { r=read, w=write, x=execute
+          ii.) chmod 755 abhi.txt     { ex:- chmod go+rw abhi.txt 
+
+* ps = to show currently running process
+
+* lspci = to show pc connected to drivers
+
+* lsusb = to show all usb conned devic like printer & thumb.
+
+* lshw = to show list of hardware on your system and where it's connected.  
+
+*#* 
+
+* free = to show memory status, total, used, free,shared, available memory
+
+* top 
+
+* clear = to clear the terminal.
+
+* TAB = to complete the command.
+
+* ctrl + c = to stop any command
+
+* sudo halt & sudo reboot = to power off or reboot the system 
+
+
+
+*************** create new sudo user/root user on ubuntuserver************
+
+
+* ssh root@server_ip_address = log in to your server remotly
+
+* adduser abhishek = to add new user
+
+* usermod -aG sudo abhishek = to add user in the group
+
+* su - abhishek = to switch user
+
+* sudo ls = to verfiy sudo command is working for abhishek user or not.
+
+
+*************** user management on server***********
+
+* cat /etc/group = to list all the group    
+       or
+* getent passwd = to list of all the group with detail
+
+* sudo adduser dhoom = to add user 
+         or
+  sudo useradd dhoom 
+
+* sudo userdel dhoom = to delete the user
+
+* sudo rm -r /home/ubuntu/dhoom = to delete the home directory
+
+* usermod -l don dhoom = to change the username of the user
+              |     |
+     new username  old username
+
+* sudo passwd don = to change/update the password
+
+* sudo chsh don = to change the shell
+
+* sudo chfn don = to change the detail of the user
+
+****** download chrome ubuntu***************
+
+
+
+sudo nano /etc/apt/sources.list
+
+deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main
+
+wget https://dl.google.com/linux/linux_signing_key.pub
+
+sudo apt-key add linux_signing_key.pub
+
+sudo apt update
+
+sudo apt install google-chrome-stable
+
+/opt/google/chrome/PepperFlash
+
+Target Packages (main/binary-amd64/Packages) is configured multiple times
+
+sudo rm /etc/apt/sources.list.d/google-chrome.list
+

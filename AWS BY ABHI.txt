@@ -1,0 +1,155 @@
+***AWS*********AWS*********AWS***********
+
+1.) ip addressing
+
+parity bit:-a constant or fixed bit called parity bit.
+
+2.) SUBNETING :- a process which divide a network into multiple small network.
+                 Grouping of IP's
+                 it reduces the wastage of IP's
+
+3.) SUBNET :- its an address which is used to identify network & host portion of ip
+
+4.) NATTING :- to translate private IP to public IP
+               net server are to be launched in public subnet
+               by launching nat server u l be able to connect with a internet from private ip 
+
+* (0.0.0.0/0 = where '/0' shows that u are connected with internet)
+
+# AWS is always follow btw /16 to /28 ip address 
+
+# Private Address = in every class of network some certain address are reserved for private network , known as Private address
+
+   Class A  = 10.0.0.0-10.255.255.255
+   
+   Class B  = 172.16.0.0-170.31.255.255
+
+   Class C  = 192.168.0.0-192.168.255.255
+
+* 5 IP ADRESS ARE RESERVED IN AWS BLOCK
+* U CN NOT GO LESS /16 AND MORE THAN /24
+
+
+Company wants their database near of them. In india AWS data center in Mumbai, 
+total 16 AWS datacentre regin present with 42 availability til july 2017
+
+* LATANCY - TIME TAKEN OF YOUR REQUST TO THE SERVER AND RESPONS BACK TO YOU.
+            it;s in milisecond
+
+ex.)  if my company database present in singapore so it will take 110 milisecond 
+
+  but if your databse rigine is in mumbai than it will take 20 milisecond only.
+ data center are connected to each othr by dark hyber cable
+
+thats y coomapny want nearest data center 
+
+* SLA = SERVICE LEVEL AGREEMENT 
+         less thn 90 min ur service will be under maintaince
+          
+Q.) why u keep ur data in multiple location or avealbility? 
+A.) so if primar goes down or any outbust that time seconday availibity will run so application or other services wont get shut down. yo keep a backup
+
+Q.) how many types of supports account?
+A.) free, developer, business, Enterprise
+      |        |        |         |
+free service  paid     paid     paid
+
+Q.) administrator gets every role except which role?
+A.) billing role of the account/company
+
+********************** IAM = IDENTITY & ACCESS MANAGEMENT = U CAN CREATE USERS WHO HV AN ACCESS OF AWS CONSOL 
+        uses storage ,database, application services
+        which user will use which services and which user is allowd for MFA or EC2 instance
+        it is like Active Directory.
+        Global service, means user can access resours in univarsally.
+        like user are in mumbai and wants to use service which is in california. possible
+
+(means u cn share ur company detail or resourse with help of IAM)
+
+senerio:- ur company thakur pvt ltd
+          
+u want every user of ur company shud use same account which is in AWS.
+than u need to give IAM link to every IAM user 
+ link:- https://490596322639.signin.aws.amazon.com/console
+                    |
+                account no.
+ click on customise to give your company name thakurpvtltd
+most important link :- https://thakurpvtltd.signin.aws.amazon.com/console
+                    |
+               comapny name
+
+
+** group = abhishek01.associate_cmt
+
+** user = it mite be user/application/resources
+
+
+* MFA (MULTI FACTOR AUTHENTICATION)
+SECOND LEVEL OF AUTHENTICATION ON ROOT ACCOUNT
+
+DOWNLOAD APP ON MOB- GOOGAL AUTHENTICATOR , QR CODE SCANNER
+
+**ROLES:-CREATE ROLL GIVE FULL ACCESS
+
+SENERIO IN REAL WORLD= ADDMIN CREATE ROLL FOR s3 OR PHOTO BUCKET
+                       DEVELOPER LAUNCH INSTANCE WITH THE ROLE
+                       APPLICATION TAKE THE CREADENTIAL
+                       APPLICATION ACCESS S3 BUCKET
+
+**POLICY
+
+**LANGUAGE- JSON(JAVA SCRIPT OBJECT NOTATION) TO READ ONLY 
+
+**IDENTIFY PROVIDERS:- TO TAKE GMAILOR ANY OTHER ACCOUNT
+
+**ACCOUNT SETING:- CREATION OF PASSWORD LIKE
+                 CONATING ALPHABET, CHARACTOR , SPECIAL CARACTOR IN PASSWORD
+
+
+******VPC (virtual private cloud)
+
+1.)  YOUR INSTANCE IS INTRACTING WITH INTERNET THAT CALLED vpc PUBLIC Susbnet
+
+2.)  SOME INSTANCES HAVE INTRACTION AND SOME DNT HV ACCESS TO INTERNET Called vpc WITH PUBLIC AND PRIVATE SUBNETS
+
+note:- hardwarde tenancy= (I.) dedecated means hardware will be using by you only
+                          cost will be too high
+                          (II.) default means har will be hardware will be shard by u.
+
+*** NAT instance are responsible to give internet access to my private instances.
+
+* public subnet- hosting server- webserver which hosting the data traffic from outside internet 
+
+**  Public route table - it consist how does public subnet will intract with internet
+                         It gets interent connection through internetGateway
+
+* private subnet- db serevr which used to post the data traffic
+
+**   private route table - it consist info. that how NAT gateway will intract with private subnet server
+
+Q.) Directly can we give internet access to Private Route Table
+A.) No! WITH THE HELP OF NAT IS POSSIBLE
+arechiteure:-  internet gateway(like router)---Public Route Table-----Web Server
+
+Q.) when u launch VPC what  resoures do u get by default?
+A.) Main route table
+
+* Route Table:- Main route table will be present by default
+   
+    add route- 0.0.0.0/0 to allow all inetrent connection to come to your InternetGateway.
+
+* internet Gateway:- Like a router a VPC has only 1 Internet Gate
+
+* Private route table set as main route table
+
+* NACL (network access control list)act as a FIREWALL
+
+* NAT uses in both public and private
+
+****to open in a instance SSH = 22
+
+***                       http  = 80
+***                       https = 443
+***                     MS SQL  = 1433
+                        RDP     = 3389
+                         MySQL  = 3306

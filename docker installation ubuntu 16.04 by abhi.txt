@@ -1,0 +1,54 @@
+DOCKER UBUNTU 16.04 LTS
+
+DOCKER :- Docker is container-based application framework,which wraps a specific application with all its dependencies in a container. 
+          Docker containers can easily to ship to the remote location on start there without making entire application setup. 
+
+
+1.) FIRST of all remove all unnessary package
+> sudo apt-get purge docker lxc-docker docker-engine docker.io
+
+* install packages
+> sudo apt-get install  curl  apt-transport-https ca-certificates software-properties-common
+
+
+*2.) Setup Docker Repository (Now import dockers official GPG key to verify packages signature before installing them with apt-get.)
+> curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add 
+  
+
+3) enable repository (Docker repository on your Ubuntu system which contains Docker packages including its dependencies. You must have to enable this repository to install Docker on Ubuntu.) 
+> sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"
+
+4.) Install Docker on Ubuntu
+> sudo apt-get update
+> sudo apt-get install docker-ce
+
+5.) check the status
+> sudo systemctl status docker
+
+
+*****uses of docker***
+
+* search docker images
+> docker search wordpress
+                  |
+                 images name
+
+*download image from docker hub
+> docker pull wordpress      (latest version by default download)
+
+> docker images   (to chek all images)
+
+> docker run -i -t ubuntu /bin/bash    (download image with container)
+(to exit from container= ctrl+P+) it will be running on background
+(press exit = to stop container)
+
+
+> docker ps    (to show currently running container)
+
+> docker ps -a   (to show all container)
+
+> docker start <CONTAINER_ID>     (to start container)
+
+> docker stop <CONTAINER_ID>      (to stop container)
+    
+> docker attach <CONTAINER_ID>    (to attch container)
